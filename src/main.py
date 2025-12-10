@@ -26,12 +26,13 @@ def main():
     if (
         args.square
         and (args.width is not None and args.height is not None)
-        and (args.width is not args.height)
+        and (args.width != args.height)
     ):
         print(
             "If '--square' is set together with '--width' and '--height', the values of width and height have to match."
             + "(or set only width or only height)"
         )
+        print(f"(parsed values: width = {args.width}, height = {args.height})")
         return
 
     if args.width is not None and args.width < 1:
